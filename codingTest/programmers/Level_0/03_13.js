@@ -69,3 +69,31 @@ function solution(n, k) {
 }
 
 // 풀이 : 문제에 수식에 맞게 설정한뒤 10인분마다 음료수 하나를 서비스로 줘야하니 Math.floor(n/10); 수식을 통해 소수점을 반올림하여 n의 입력값에 따라 서비스 음료수를 계산할 수 있게 하였다.
+
+
+// 정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소의 평균값을 return하도록 solution 함수를 완성해주세요.
+
+function solution(numbers) {
+    var answer = numbers;
+    var sum = 0;   
+    answer.forEach(item => {
+        sum += item;
+    });
+    return sum / answer.length;
+    }
+
+//  정수가 들어 있는 배열 num_list가 매개변수로 주어집니다. num_list의 원소의 순서를 거꾸로 뒤집은 배열을 return하도록 solution 함수를 완성해주세요.
+
+// 함수를 사용하지 않고 푼 버전
+function solution(num_list) {
+    var answer = [];
+    for (let i=num_list.length; i>0; i--) {
+        answer.push(num_list[i-1]);
+    }
+    return answer;
+}
+
+// 함수 사용해서 푼 버전
+function solution(num_list) {
+    return num_list.reverse();
+}
