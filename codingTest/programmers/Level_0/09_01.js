@@ -5,4 +5,4 @@
 6 ≤ num_list의 길이 ≤ 30
 1 ≤ num_list의 원소 ≤ 100
 */
-const solution = num_list => num_list.sort((a, b) => a - b).slice(5);
+const solution = num_list => num_list.sort((a, b) => a - b).slice(0, 5);
