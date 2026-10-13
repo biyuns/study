@@ -19,7 +19,12 @@ const solution = (arr) => {
 
 // flatMap() Array().fill()방법
 /*
+**map()과 flatMap()의 차이**
+map()은 Array().fill() 사용시 2차원 배열 반환
+flatMap()은 Arrayy().fill() 사용시 한 단계 펼쳐서 1차원 배열을 반환
 
+**Array().fill()**
+Array()는 배열을 생성하고 fill()은 배열을 특정값으로 채운다.
 */
 
 const solution = arr => arr.flatMap((num) => Array(num).fill(num));
@@ -45,3 +50,33 @@ const solution = (num_list) => {
     num_list[num_list.length-1] > num_list[num_list.length-2] ? num_list.push(num_list[num_list.length-1]-num_list[num_list.length-2]) : num_list.push(num_list[num_list.length-1]*2);
     return num_list;
 }
+
+// 가독성 개선, 변수 선언
+const solution = (num_list) => {
+    const last = num_list[num_list.length - 1];
+    const prev = num_list[num_list.length - 2];
+
+    num_list.push(last > prev ? last - prev : last * 2);
+
+    return num_list;
+};
+
+// at() 메서드 활용
+// at()은 배열의 특정 인덱스에 있는 원소를 가져오는 메서드로 음수 인덱스를 이용해 뒤에서부터 접근할 수 있다.
+const solution = (num_list) => {
+    const last = num_list.at(-1);
+    const prev = num_list.at(-2);
+
+    num_list.push(last > prev ? last - prev : last * 2);
+
+    return num_list;
+};
+
+// slice() + 구조 분해 할당 방법
+const solution = (num_list) => {
+    const [prev, last] = num_list.slice(-2);
+
+    num_list.push(last > prev ? last - prev : last * 2);
+
+    return num_list;
+};
