@@ -80,3 +80,5 @@ const solution = (num_list) => {
 
     return num_list;
 };
+
+// 테스트 commit
